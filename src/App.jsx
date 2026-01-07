@@ -15,13 +15,16 @@ function App() {
 
         try {
             // THE MOMENT OF TRUTH: Talking to Python
-            const res = await fetch('https://my-ai-brain.onrender.com/chat', {
-                method: 'POST',
+            const res = await fetch(
+              "https://ai-backend-api-k8o7.onrender.com/chat",
+              {
+                method: "POST",
                 headers: {
-                    'Content-Type': 'application/json',
+                  "Content-Type": "application/json",
                 },
                 body: JSON.stringify({ prompt: prompt }),
-            });
+              }
+            );
 
             // --- NEW STREAMING LOGIC ---
             const reader = res.body.getReader();
